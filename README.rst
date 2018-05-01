@@ -1,6 +1,6 @@
-=============
+===============
 ROLE _TEMPLATE
-=============
+===============
 
 .. image:: https://img.shields.io/github/license/adfinis-sygroup/ansible-role-_template.svg?style=flat-square
   :target: https://github.com/adfinis-sygroup/ansible-role-_template/blob/master/LICENSE
@@ -65,3 +65,4 @@ Author Information
 _template role was written by:
 
 * Adfinis SyGroup AG | `Website <https://www.adfinis-sygroup.ch/>`_ | `Twitter <https://twitter.com/adfinissygroup>`_ | `GitHub <https://github.com/adfinis-sygroup>`_
+
