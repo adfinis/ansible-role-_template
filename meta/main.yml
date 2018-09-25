@@ -3,6 +3,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: '_template'
   author: 'Adfinis SyGroup AG'
   description: ''
   company: 'Adfinis SyGroup AG'

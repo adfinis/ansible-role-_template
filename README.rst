@@ -6,7 +6,7 @@ ROLE _TEMPLATE
   :target: https://github.com/adfinis-sygroup/ansible-role-_template/blob/master/LICENSE
 
 .. image:: https://img.shields.io/travis/adfinis-sygroup/ansible-role-_template.svg?style=flat-square
-  :target: https://github.com/adfinis-sygroup/ansible-role-_template
+  :target: https://travis-ci.org/adfinis-sygroup/ansible-role-_template
 
 .. image:: https://img.shields.io/badge/galaxy-adfinis--sygroup._template-660198.svg?style=flat-square
   :target: https://galaxy.ansible.com/adfinis-sygroup/_template
