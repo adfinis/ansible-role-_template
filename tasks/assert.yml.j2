@@ -1,0 +1,25 @@
+---
+
+- name: test if {{ role_name }}_setting_a is set correctly
+  ansible.builtin.assert:
+    that:
+      - {{ role_name }}_setting_a is defined
+      - {{ role_name }}_setting_a is string
+    quiet: yes
+
+- name: test if {{ role_name }}_setting_b is set correctly
+  ansible.builtin.assert:
+    that:
+      - {{ role_name }}_setting_b is iterable
+    quiet: yes
+  when:
+    - {{ role_name }}_setting_b is defined
+
+- name: test if item in {{ role_name }}_setting_b is set correctly
+  ansible.builtin.assert:
+    that:
+      - item.name is string
+    quiet: yes
+  loop: "{% raw %}{{ {% endraw %}{{ role_name }}{% raw %}_setting_b }}{% endraw %}"
+  when:
+    - {{ role_name }}_setting_b is defined

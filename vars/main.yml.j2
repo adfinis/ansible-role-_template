@@ -1,0 +1,30 @@
+---
+
+# This is a map, to define distribution specific names.
+_{{ role_name }}_packages:
+  default:
+    - apache-httpd
+    - openssl
+  RedHat-8:
+    - apache-httpd
+    - opensslxya
+  Debian:
+    - apache2
+    - openssl1
+
+# The variable `package` is determined by looking a the map above
+# (`_packages`). In this case, the `ansible_os_family` and
+# `ansible_distribution_major_version` (See
+# [this debug](https://gitlab.com/robertdebock/ansible-role-debug/) role for
+# possible values.)
+# The intent is to find the most specific combination first, and eventually
+# falling back to `default`.
+# The underscore is to indicate the variable should not be overwritten.
+{{ role_name }}_packages: "{% raw %}{{ {% endraw %}_{{ role_name }}_packages{% raw %}[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_{% endraw %}{{ role_name }}_packages{% raw %}[ansible_os_family] | default(_{% endraw %}{{ role_name }}{% raw %}_packages['default'])) }}{% endraw %}"
+
+# A map of the service name.
+_{{ role_name }}_service:
+  default: my_service
+  RedHat: your_service
+
+{{ role_name }}_service: "{% raw %}{{ _{% endraw %}{{ role_name }}{% raw %}_service[ansible_os_family] | default(_{% endraw %}{{ role_name }}{% raw %}_service['default']) }}{% endraw %}"

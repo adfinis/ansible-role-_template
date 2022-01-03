@@ -1,0 +1,3 @@
+- [ ] Add CI: ansible-galaxy init --role-skeleton=ansible-role-_template example
+- [ ] Test the role that has been generated.
+- [ ] Modify `vars/main.yml` to actually work.
