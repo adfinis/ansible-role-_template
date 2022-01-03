@@ -17,3 +17,4 @@
 - [ ] The `LICENSE` file contains a date stamp, update?
 - [ ] What LICENSE to use? (Now GPL-3.0)
 - [ ] In the README.md, what images should be included?
+- [ ] Will pre-commit help?
