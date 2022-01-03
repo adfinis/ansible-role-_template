@@ -1,3 +1,4 @@
 - [ ] Add CI: ansible-galaxy init --role-skeleton=ansible-role-_template example
 - [ ] Test the role that has been generated.
 - [ ] Modify `vars/main.yml` to actually work.
+- [ ] Make a description of `beginner`, `intermediate` and `advanced`. (maybe just 2.)
