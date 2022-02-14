@@ -6,8 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
-      - name: Install ansible-galaxy
-        run: pip install ansible
+      - uses: robertdebock/github-action-molecule # The image "ansible/galaxy" is not maintained.
       - name: Checkout code
         uses: actions/checkout@v2
         with:
