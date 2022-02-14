@@ -1,0 +1,13 @@
+name: Test the creation of a role.
+
+# on:
+#   release:
+#     types: [created, edited, published, released]
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install ansible-galaxy
+        run: pip install ansible
+      - name: Create a role
+        run: ansible-galaxy init --role-skeleton=ansible-role-_template example

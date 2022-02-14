@@ -1,6 +1,0 @@
----
-
-init:
-  script:
-    - cd ../
-    - ansible-galaxy init --role-skeleton=ansible-role-_template example
