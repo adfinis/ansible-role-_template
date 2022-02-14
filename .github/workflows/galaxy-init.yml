@@ -6,10 +6,11 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
-      - uses: docker://robertdebock/github-action-molecule # The image "ansible/galaxy" is not maintained.
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           path: "${{ github.repository }}"
+      - name: Install ansible-galaxy
+        run: pip install ansible
       - name: Create a role
         run: cd ../ ; ansible-galaxy init --role-skeleton=ansible-role-_template example
