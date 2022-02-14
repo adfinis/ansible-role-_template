@@ -1,8 +1,7 @@
 name: Test the creation of a role.
 
-# on:
-#   release:
-#     types: [created, edited, published, released]
+on: push
+
 jobs:
   test:
     runs-on: ubuntu-20.04
