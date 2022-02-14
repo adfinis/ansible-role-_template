@@ -8,5 +8,9 @@ jobs:
     steps:
       - name: Install ansible-galaxy
         run: pip install ansible
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
       - name: Create a role
-        run: ansible-galaxy init --role-skeleton=ansible-role-_template example
+        run: cd ../ ; ansible-galaxy init --role-skeleton=ansible-role-_template example
