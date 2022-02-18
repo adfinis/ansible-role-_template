@@ -1,7 +1,10 @@
 ---
 
-{{ role_name }}_setting_a: "hello world"
-
-{{ role_name }}_setting_b:
-  - name: "item-a"
-  - name: "item-b"
+{{ role_name }}_urls:
+  - url: "wttr.in/brn"
+    output: "curlhere.html"
+    user-agent: "superagent/1.0"
+  - url: "example.com/docs/manpage.html"
+    referer: "http://nowhereatall.example.com"
+    options:
+      - "-O"

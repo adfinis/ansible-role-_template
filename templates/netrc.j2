@@ -1,0 +1,15 @@
+{% raw %}{{ ansible_managed | comment }}{% endraw %}
+
+# Please use your variables (from `default/main.yml` for example) here.
+# (For developers of the template/skeleton code: files in `templates` are not
+# interpreted by Jinja.)
+
+{% for item in {{ role_name }}_urls %}
+url = "{{ item.url }}"
+{% if item.output is defined %}output = "{{ item.output }}"{% endif %}
+{% if item.user-agent is defined %}user-agent = "superagent/1.0"{% endif %}
+{% if item.referer is defined %}referer = "{{ item.referer }}"{% endif %}
+{% for option in item.options %}
+{{ option }}
+{% endfor %}
+{% endfor %}

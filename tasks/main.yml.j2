@@ -7,23 +7,20 @@
 
 - name: install
   ansible.builtin.package:
-    # The variable "packages" is calculated in `vars/main.yml`
+    # The variable "{{ role_name }}_packages" is calculated in `vars/main.yml`
     name: "{% raw %}{{ {% endraw %}{{ role_name }}{% raw %}_packages }}{% endraw %}"
     state: present
 
 - name: configure
-  # You can use `template`, `lineinfile`, `inifile`, `copy`, etc.
   ansible.builtin.template:
-    src: example.conf.j2
-    dest: /etc/example.conf
+    src: netrc.j2
+    dest: /tmp/.netrc
     owner: root
     group: root
     mode: "0644"
-  notify:
-    - restart
 
-- name: start and enable
-  ansible.builtin.service:
-    name: "{% raw %}{{ {% endraw %}{{ role_name }}_service{% raw %} }}{% endraw %}"
-    state: running
-    enabled: yes
+# - name: start and enable
+#   ansible.builtin.service:
+#     name: "{% raw %}{{ {% endraw %}{{ role_name }}_service{% raw %} }}{% endraw %}"
+#     state: running
+#     enabled: yes
