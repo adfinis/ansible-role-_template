@@ -1,10 +1,11 @@
 ---
 
-{{ role_name }}_urls:
-  - url: "wttr.in/brn"
-    output: "curlhere.html"
-    user-agent: "superagent/1.0"
-  - url: "example.com/docs/manpage.html"
-    referer: "http://nowhereatall.example.com"
-    options:
-      - "-O"
+{{ role_name }}_string: "Hello world!"
+
+{{ role_name }}_list:
+  - "Hello"
+  - "World"
+
+{{ role_name }}_map:
+  first: one
+  second: two

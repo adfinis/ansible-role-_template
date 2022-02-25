@@ -20,10 +20,17 @@ mv example ansible-role-example
 cd ansible-role-example
 ```
 
+You can now test the newly instantiate example role:
+
+```shell
+```
+
 Now you can start coding, the advised order to modify files:
 
 1. `README.md` - Describe the scope of your role.
 2. `vars/main.yml` - Specify all packages, services, etc.
 3. `defaults/main.yml` - Specify preferences for consumers of the role.
+
+## Development
 
 TODO: Finish this.

@@ -1,0 +1,28 @@
+---
+
+# This file will only be used for Ansible 2.11 and up.
+# For Ansible under 2.11, `tasks/assert.yml` can be used. It's a little slower, but offers more features.
+argument_specs:
+  main:
+    short_description: "Install and configure {{ role_name }}."
+    description: >
+      Install all required packages, configure required files and manage services to use {{ role_name }} services.
+    author: Adfinis AG
+    options:
+      {{ role_name }}_string:
+        type: str
+        default: "Hello world!"
+        description: "Some string to print."
+      {{ role_name }}_list:
+        type: list
+        elements: str
+        default:
+          - "Hello"
+          - "World"
+        description: "Some map to iterate over."
+      {{ role_name }}_map:
+        type: dict
+        default:
+          first: one
+          second: two
+        description: "Some map to print."

@@ -5,22 +5,23 @@
   run_once: yes
   delegate_to: localhost
 
-- name: install
-  ansible.builtin.package:
-    # The variable "{{ role_name }}_packages" is calculated in `vars/main.yml`
-    name: "{% raw %}{{ {% endraw %}{{ role_name }}{% raw %}_packages }}{% endraw %}"
-    state: present
+- name: show string
+  ansible.builtin.debug:
+    msg: "{% raw %}{{{% endraw %}{{ role_name }}_string {% raw %}}}{% endraw %}"
 
-- name: configure
-  ansible.builtin.template:
-    src: netrc.j2
-    dest: /tmp/.netrc
-    owner: root
-    group: root
-    mode: "0644"
+- name: show item from list
+  ansible.builtin.debug:
+    msg: "{% raw %}{{ item }}{% endraw %}"
+  loop: "{% raw %}{{{% endraw %}{{ role_name }}_list {% raw %}}}{% endraw %}"
 
-# - name: start and enable
-#   ansible.builtin.service:
-#     name: "{% raw %}{{ {% endraw %}{{ role_name }}_service{% raw %} }}{% endraw %}"
-#     state: running
-#     enabled: yes
+- name: show map
+  ansible.builtin.debug:
+    msg: "{% raw %}{{{% endraw %}{{ role_name }}_map {% raw %}}}{% endraw %}"
+
+- name: show ansible_os_family
+  ansible.builtin.debug:
+    msg: "{% raw %}{{ ansible_os_family }}{% endraw %}"
+
+- name: show rendered_string
+  ansible.builtin.debug:
+    msg: "{% raw %}{{ rendered_string }}{% endraw %}"
