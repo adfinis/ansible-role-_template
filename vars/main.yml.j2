@@ -1,0 +1,10 @@
+---
+
+# A map to relate `ansible_os_family` to some kind of a string.
+_rendered_string:
+  undetermined: "I could not determine where I'm running on."
+  RedHat: "I'm running an American OS."
+  Debian: "I'm running GNU/Linux."
+  Darwin: "I'm on an expensive OS."
+
+rendered_string: "{% raw %}{{ _rendered_string[ansible_os_family] | default(_rendered_string['undetermined']) }}{% endraw %}"

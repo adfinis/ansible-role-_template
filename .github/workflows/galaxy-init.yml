@@ -1,0 +1,16 @@
+name: Test the creation of a role.
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
+      - name: Install ansible-galaxy
+        run: pip install ansible
+      - name: Create a role
+        run: cd ../ ; ansible-galaxy init --role-skeleton=ansible-role-_template example

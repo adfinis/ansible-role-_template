@@ -1,0 +1,20 @@
+- [ ] Present/discuss the `vars/main.yml` idea.
+- [ ] Discuss usage of Ansible `tags`: "If `tags` are required, the role is too big."
+- [ ] Discuss `configuration.yml` and `installation.yml`: Keep it in one `main.yml` unless
+- [ ] Discuss the (local) path in `templates`. (i.e.: `templates/etc`.)
+- [ ] Should (all) variables be `asserted`?
+- [ ] Are `argument_specs` interesting? (Remember: default-out-of-sync, limited testing capabilities.)
+- [ ] Find the preferred name of variables.
+- [ ] How do we ensure the `platforms` (in `meta/main.yml`) are actually working.
+- [ ] When to quote?
+- [ ] How to quote? (double, single, ?)
+- [ ] How to name roles with two words. (i.e.: `example a`) See [here](https://galaxy.ansible.com/docs/contributing/creating_role.html#role-metadata).
+- [ ] Do we want to use `dependencies` in `meta/main.yml`.
+- [ ] Maybe write a work-flow-advice. I.e. "step 1: ...".
+- [ ] Should be introduce molecule in this skeleton, or keep it for "advanced" use-cases? (Remove `tests`?)
+- [ ] Should be have a `basic`, `intermediate` and `advanced` skeletons?
+- [ ] What is `.editorconfig`?
+- [ ] The `LICENSE` file contains a date stamp, update?
+- [ ] What LICENSE to use? (Now GPL-3.0)
+- [ ] In the README.md, what images should be included?
+- [ ] Will pre-commit help?

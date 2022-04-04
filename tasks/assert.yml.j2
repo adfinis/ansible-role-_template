@@ -1,0 +1,22 @@
+---
+
+- name: test if {{ role_name }}_string is set correctly
+  ansible.builtin.assert:
+    that:
+      - {{ role_name }}_string is defined
+      - {{ role_name }}_string is string
+    quiet: yes
+
+- name: test if {{ role_name }}_list is set correctly
+  ansible.builtin.assert:
+    that:
+      - {{ role_name }}_list is defined
+      - {{ role_name }}_list is iterable
+    quiet: yes
+
+- name: test if {{ role_name }}_map is set correctly
+  ansible.builtin.assert:
+    that:
+      - {{ role_name }}_map is defined
+      - {{ role_name }}_map is mapping
+    quiet: yes
